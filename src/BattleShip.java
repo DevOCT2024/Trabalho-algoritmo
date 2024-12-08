@@ -182,10 +182,12 @@ public class BattleShip {
     public static boolean isCoordinatesInvalid() {
         if (row < 0 || row >= Board_Size || col < 0 || col >= Board_Size) {
             System.out.println("Coordenadas inválidas!");
+            printBoard();
             return true;
         }
         if (board[row][col] == '~' || board[row][col] == 'x') {
             System.out.println("Você já escolheu essa casa em outra jogada. Não é possível jogar duas bombas no mesmo lugar.");
+            printBoard();
             return true;
         }
         return false;
